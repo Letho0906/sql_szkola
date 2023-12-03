@@ -76,3 +76,10 @@ left join wypozyczenia as w
 using(nr_czytelnika)
 where Data_zwrotu is null and c.funkcja = "S"
 order by c.nazwisko;
+
+-- 10
+select  k.tytul
+from ksiazki as k 
+left join wypozyczenia as w 
+using(sygnatura)
+where w.data_wypozyczenia is null;
