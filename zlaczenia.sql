@@ -83,3 +83,8 @@ from ksiazki as k
 left join wypozyczenia as w 
 using(sygnatura)
 where w.data_wypozyczenia is null;
+
+-- 11 
+select count(nazwisko) as "M albo S"
+from czytelnicy 
+where nazwisko like "M%" or nazwisko like "S%";
