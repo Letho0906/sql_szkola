@@ -53,4 +53,13 @@ using(id_stanowisko)
 where p.miasto = "Lublin" and p.wynagrodzenie >= 2000
 group by s.nazwa;
 
+-- 7
+select s.nazwa, count(w.id_pracownika)
+from pracownicy as p
+left join wypozyczenia as w
+using(id_pracownika)
+left join stanowiska as s
+using(id_stanowisko)
+group by s.nazwa;
+
 
