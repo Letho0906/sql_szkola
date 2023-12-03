@@ -95,3 +95,8 @@ from pracownicy as p
 left join wypozyczenia as w
 using(id_pracownika)
 where w.id_pracownika is null;
+
+-- 13 
+select count(sygnatura)
+from wypozyczenia 
+where Data_wypozyczenia is null;
