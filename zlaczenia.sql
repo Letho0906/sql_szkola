@@ -62,4 +62,10 @@ left join stanowiska as s
 using(id_stanowisko)
 group by s.nazwa;
 
+-- 8 
+select k.tytul, w.id_pracownika
+from wypozyczenia as w 
+left join ksiazki as k 
+using(sygnatura)
+where w.Nr_czytelnika = 11 and (w.Id_pracownika = 7 or w.Id_pracownika = 6);
 
