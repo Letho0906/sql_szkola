@@ -22,7 +22,7 @@ left join wypozyczenia as w
 using(nr_czytelnika)
 where w.nr_czytelnika is null;
 
--- 4 
+-- 5
 select d.nazwa, count(k.id_dzial)
 from dzialy as d
 left join ksiazki as k
