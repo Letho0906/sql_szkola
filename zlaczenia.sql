@@ -31,11 +31,18 @@ group by sygnatura
 having count(sygnatura) >= 5;
 
 -- 5
-select d.nazwa, count(k.id_dzial)
+select d.nazwa, count(k.id_dzial) as "liczba książek"
 from dzialy as d
 left join ksiazki as k
 using(id_dzial)
 where d.nazwa = "Informatyka"
+group by id_dzial
+union
+select d.nazwa, count(k.id_dzial) as "liczba książek"
+from dzialy as d
+left join ksiazki as k
+using(id_dzial)
+where d.nazwa = "Literatura"
 group by id_dzial;
 
 
