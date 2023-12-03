@@ -1,7 +1,8 @@
 
 use 5ti2p_biblioteka13;
+
 -- 1
-select c.nr_czytelnika, c.nazwisko, c.imie, count(w.sygnatura) as "liczba wypozyczen"
+select nr_czytelnika, Nazwisko, imie, count(sygnatura) as "liczba wypozyczeń"
 from czytelnicy as c
 left join wypozyczenia as w
 using(nr_czytelnika)
