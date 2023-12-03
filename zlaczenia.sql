@@ -74,5 +74,5 @@ select 	distinct c.imie, c.nazwisko
 from czytelnicy as c 
 left join wypozyczenia as w
 using(nr_czytelnika)
-where Data_zwrotu is null 
+where Data_zwrotu is null and c.funkcja = "S"
 order by c.nazwisko;
