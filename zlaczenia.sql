@@ -88,3 +88,10 @@ where w.data_wypozyczenia is null;
 select count(nazwisko) as "M albo S"
 from czytelnicy 
 where nazwisko like "M%" or nazwisko like "S%";
+
+-- 12 
+select concat(p.nazwisko," ",p.imie," ",p.id_pracownika) as "pracownik"
+from pracownicy as p
+left join wypozyczenia as w
+using(id_pracownika)
+where w.id_pracownika is null;
