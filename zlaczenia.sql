@@ -45,4 +45,12 @@ using(id_dzial)
 where d.nazwa = "Literatura"
 group by id_dzial;
 
+-- 6
+select s.nazwa, count(p.Imie) as "liczba ludzi"
+from stanowiska as s 
+left join pracownicy as p
+using(id_stanowisko)
+where p.miasto = "Lublin" and p.wynagrodzenie >= 2000
+group by s.nazwa;
+
 
