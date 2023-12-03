@@ -22,6 +22,14 @@ left join wypozyczenia as w
 using(nr_czytelnika)
 where w.nr_czytelnika is null;
 
+-- 4
+select k.sygnatura, k.tytul, count(w.sygnatura) as "liczba wypozyczen"
+from ksiazki as k 
+left join wypozyczenia as w
+using(sygnatura)
+group by sygnatura
+having count(sygnatura) >= 5;
+
 -- 5
 select d.nazwa, count(k.id_dzial)
 from dzialy as d
