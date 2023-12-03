@@ -69,3 +69,10 @@ left join ksiazki as k
 using(sygnatura)
 where w.Nr_czytelnika = 11 and (w.Id_pracownika = 7 or w.Id_pracownika = 6);
 
+-- 9 
+select 	distinct c.imie, c.nazwisko 
+from czytelnicy as c 
+left join wypozyczenia as w
+using(nr_czytelnika)
+where Data_zwrotu is null 
+order by c.nazwisko;
