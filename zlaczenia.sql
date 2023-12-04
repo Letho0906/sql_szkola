@@ -100,3 +100,11 @@ where w.id_pracownika is null;
 select count(sygnatura)
 from wypozyczenia 
 where Data_wypozyczenia is null;
+
+-- 14
+select w.data_wypozyczenia, c.nazwisko
+from czytelnicy as c
+left join wypozyczenia as w
+using(nr_czytelnika)
+where w.data_wypozyczenia between '2018-11-05' and '2020-03-08';
+
