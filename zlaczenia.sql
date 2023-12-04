@@ -108,3 +108,10 @@ left join wypozyczenia as w
 using(nr_czytelnika)
 where w.data_wypozyczenia between '2018-11-05' and '2020-03-08';
 
+--15
+select c.imie, c.nazwisko 
+from czytelnicy as c
+left join wypozyczenia as w 
+using(nr_czytelnika)
+where w.Nr_czytelnika is null;
+
