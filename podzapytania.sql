@@ -39,3 +39,11 @@ from biuro
 where biuronr in (select biuronr 
 				  from biuro
                   where miasto = "lomza");
+
+-- 2.3
+select *
+from biuro
+where biuronr in (select biuronr
+			from personel
+            group by biuronr
+            having count(*) >= 3);
