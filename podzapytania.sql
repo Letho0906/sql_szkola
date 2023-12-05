@@ -47,3 +47,11 @@ where biuronr in (select biuronr
 			from personel
             group by biuronr
             having count(*) >= 3);
+
+-- 2.4
+select *
+from nieruchomosc
+where nieruchomoscnr in (select nieruchomoscnr
+						 from wynajecie 
+                         group by nieruchomoscnr
+                         having count(nieruchomoscnr) >=2);
