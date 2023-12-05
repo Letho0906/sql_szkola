@@ -24,14 +24,14 @@ where id = (select towar_id
 select nazwa, grupa
 from towary
 where cena > (select avg(cena) 
-			  from towary);
+	      from towary);
 
 -- 2.1
 select count(imie) as "liczba wlascicieli mieszkajacych w bialystoku"
 from wlasciciel
 where wlascicielnr in (select wlascicielnr 
-					  from nieruchomosc 
-                      where miasto = "bialystok");
+		       from nieruchomosc 
+                       where miasto = "bialystok");
 
 -- 2.2
 select count(biuronr) as "liczba biuro w łomży"
