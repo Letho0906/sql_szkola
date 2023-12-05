@@ -25,3 +25,10 @@ select nazwa, grupa
 from towary
 where cena > (select avg(cena) 
 			  from towary);
+
+-- 5 
+select count(imie) as "liczba wlascicieli mieszkajacych w bialystoku"
+from wlasciciel
+where wlascicielnr in (select wlascicielnr 
+					  from nieruchomosc 
+                      where miasto = "bialystok");
