@@ -37,21 +37,21 @@ where wlascicielnr in (select wlascicielnr
 select count(biuronr) as "liczba biuro w łomży"
 from biuro
 where biuronr in (select biuronr 
-				  from biuro
+		  from biuro
                   where miasto = "lomza");
 
 -- 2.3
 select *
 from biuro
 where biuronr in (select biuronr
-			from personel
-            group by biuronr
-            having count(*) >= 3);
+		  from personel
+            	  group by biuronr
+            	  having count(*) >= 3);
 
 -- 2.4
 select *
 from nieruchomosc
 where nieruchomoscnr in (select nieruchomoscnr
-						 from wynajecie 
+	   		 from wynajecie 
                          group by nieruchomoscnr
                          having count(nieruchomoscnr) >=2);
