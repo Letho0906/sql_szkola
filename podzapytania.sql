@@ -19,3 +19,9 @@ where id = (select towar_id
 	    from zamowienia
                  where wartosc = (select max(wartosc)
 				  from zamowienia));
+
+-- 4
+select nazwa, grupa
+from towary
+where cena > (select avg(cena) 
+			  from towary);
