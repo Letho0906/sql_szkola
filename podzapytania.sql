@@ -65,3 +65,11 @@ where personelnr in (select personelnr
 			 from nieruchomosc 
                          group by personelnr
                          having count(personelnr) >= 2);
+
+-- 2.6
+select *
+from klient
+where klientnr in (select klientnr
+		   from wynajecie 
+                   group by klientnr
+                   having count(klientnr) >= 2);
