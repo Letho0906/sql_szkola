@@ -55,3 +55,13 @@ where nieruchomoscnr in (select nieruchomoscnr
 	   		 from wynajecie 
                          group by nieruchomoscnr
                          having count(nieruchomoscnr) >=2);
+-- 2.5
+select imie, nazwisko, (select count(personelnr) 
+			from nieruchomosc
+                        group by personelnr
+                        having count(personelnr) >= 2) as "liczba nieruchomości"
+from personel
+where personelnr in (select personelnr
+			 from nieruchomosc 
+                         group by personelnr
+                         having count(personelnr) >= 2);
